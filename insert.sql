@@ -1,5 +1,3 @@
-create table publisher (id integer primary key, name text not null, country text not null);
-
 insert into publisher (name, country) values ("PHI", "India");
 insert into publisher (name, country) values ("Harper", "USA");
 insert into publisher (name, country) values ("GCP", "USA");
@@ -7,8 +5,6 @@ insert into publisher (name, country) values ("Avery", "USA");
 insert into publisher (name, country) values ("Del Rey", "UK");
 insert into publisher (name, country) values ("Vintage", "UK");
 
-
-create table books (id integer primary key, title text not null, publisher integer references publisher(id));
 
 insert into books (title, publisher) values ("The C Programming Language", 1);
 insert into books (title, publisher) values ("The Go Programming Language", 1);
@@ -20,8 +16,6 @@ insert into books (title, publisher) values ("The City and The City", 5);
 insert into books (title, publisher) values ("The Great War for Civilisation", 6);
 
 
-create table subjects (id integer primary key, name text not null);
-
 insert into subjects (name) values ("C");
 insert into subjects (name) values ("UNIX");
 insert into subjects (name) values ("Technology");
@@ -32,8 +26,6 @@ insert into subjects (name) values ("Psychology");
 insert into subjects (name) values ("Politics");
 insert into subjects (name) values ("History");
 
-
-create table books_subjects (book integer references books(id), subject integer references subjects(id));
 
 insert into books_subjects (book, subject) values (1, 1);
 insert into books_subjects (book, subject) values (1, 2);
